@@ -1,0 +1,16 @@
+version: latest
+
+services:
+ python-exec:
+  build: ./executavel/
+  depends_on:
+    - mysql
+
+ mysql:
+  build: ./partesql/
+  restart: never
+  environment:
+   MYSQL_DATABASE: 'Livros'
+   MYSQL_ROOT_PASSWORD: '123123'
+  ports:
+  - "33306:3306"

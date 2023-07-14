@@ -1,0 +1,7 @@
+FROM mysql/mysql-server:8.0.2
+
+USER root
+
+ENV MYSQL_ROOT_PASSWOORD=123123
+
+COPY ./partesql/config.sql /docker-entrypoint-initdb.d/
