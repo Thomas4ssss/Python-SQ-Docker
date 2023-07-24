@@ -1,9 +1,9 @@
-FROM python:3.11.4
+FROM python
+
+RUN pip install -r /executavel/requirements.txt
 
 WORKDIR /executavel
 
 COPY . /executavel
 
-RUN pip install -r \executavel\requirements.txt
-
-CMD ["python", "./executavel/principal.py"]
+CMD [ "python3" , "executavel/principal.py" ]

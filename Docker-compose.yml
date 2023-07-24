@@ -1,16 +1,16 @@
 version: latest
 
 services:
- python-exec:
-  build: ./executavel/
-  depends_on:
-    - mysql
+  executavel:  
+    image: python
+    build: ./executavel/
+    depends_on:
+      - partesql
 
- mysql:
-  build: ./partesql/
-  restart: never
-  environment:
-   MYSQL_DATABASE: 'Livros'
-   MYSQL_ROOT_PASSWORD: '123123'
-  ports:
-  - "33306:3306"
+  partesql:
+    image: mysql/mysql-server:8.0.20
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123123
+      MYSQL_DATABASE: 'Livros'
+      MYSQL_USER: 'root'
