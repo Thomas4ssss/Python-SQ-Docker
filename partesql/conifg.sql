@@ -1,5 +1,5 @@
 CREATE DATABASE Livros;
-use Livros;
+USE Livros;
 
 CREATE TABLE projeto(
     id int not null auto_increment, 

@@ -2,15 +2,16 @@ import pandas as pd
 import mysql.connector
 import re
 
-
 banco = mysql.connector.connect(
-    host = 'localhost',
-    database = 'Livros',
-    user = 'root',
-    password = '123123',
+        host = 'localhost',
+        user = 'root',
+        password = '121212',
+        database ='Livros'
 )
 cursor = banco.cursor()
 
+
+cursor.execute("USE Livros")
 
 def gravar_itens(lista_para_sql):
     for parte in lista_para_sql:
@@ -36,7 +37,7 @@ def gravar_itens(lista_para_sql):
 
 def visualizar_livros():
     leitura = []
-    with open("./executavel/emprestados.csv", encoding="utf-8") as archive:
+    with open("./executavel/livros.csv", encoding="utf-8") as archive:
         for line in archive:
             result = line.split(sep=',')
             result = line.rstrip('\n')
