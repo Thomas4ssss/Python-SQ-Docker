@@ -5,7 +5,7 @@ import re
 banco = mysql.connector.connect(
         host = 'localhost',
         user = 'root',
-        password = '121212',
+        password = '123123',
         database ='Livros'
 )
 cursor = banco.cursor()
